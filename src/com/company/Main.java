@@ -7,15 +7,15 @@ public class Main {
         // В этой части кода мы объявляем наши экземплеры классов.
         WeatherData weatherData = new WeatherData();
 
-        // Обратите внимание, что тут переменной subject типа SubjectInterface
+        // Обратите внимание, что тут переменной subject типа ISubject
         // мы присваиваем значение переменной weatherData, которая хранит в себе
         // экземпляр класса WeatherData. Это работает только потому что класс
-        // WeatherData реализует свойства интерфейса SubjectInterface и тем
+        // WeatherData реализует свойства интерфейса ISubject и тем
         // самым является этим интерфесом.
-        SubjectInterface subject = weatherData;
+        ISubject subject = weatherData;
 
-        // Здесь по такому же принцепу в случае ConsoleDisplay и SubscriberInterface.
-        SubscriberInterface subscriber = new ConsoleDisplay();
+        // Здесь по такому же принцепу в случае ConsoleDisplay и ISubscriber.
+        ISubscriber subscriber = new ConsoleDisplay();
         // Стоит заметить, что хоть и ConsoleDisplay имеет метод printData(),
         // после того как мы присвоем его в переменную subscriber вызвать метод
         // у нас не получиться:

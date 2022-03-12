@@ -3,10 +3,10 @@ package com.company;
 import java.util.ArrayList;
 import java.util.List;
 
-public class WeatherData implements SubjectInterface { // Реализуем интерфейс SubjectInterface
+public class WeatherData implements ISubject { // Реализуем интерфейс ISubject
 
     // Структура данных список
-    private List<SubscriberInterface> subscribersList;
+    private List<ISubscriber> subscribersList;
 
     private float temperature;
     private float humidity;
@@ -22,16 +22,16 @@ public class WeatherData implements SubjectInterface { // Реализуем и�
         this.pressure = 1;
     }
 
-    // Реализуем методы интерфейса SubjectInterface.
+    // Реализуем методы интерфейса ISubject.
     // Описание методов есть в файлах интрфейса.
     @Override
-    public void subscribe(SubscriberInterface subscriberInterface) {
-        subscribersList.add(subscriberInterface);
+    public void subscribe(ISubscriber iSubscriber) {
+        subscribersList.add(iSubscriber);
     }
 
     @Override
-    public void removeSubscriber(SubscriberInterface subscriberInterface) {
-        subscribersList.remove(subscriberInterface);
+    public void removeSubscriber(ISubscriber iSubscriber) {
+        subscribersList.remove(iSubscriber);
     }
 
     @Override
@@ -41,7 +41,7 @@ public class WeatherData implements SubjectInterface { // Реализуем и�
 //            subscribersList.get(i).setData(this.temperature, this.humidity, this.pressure);
 //        }
 
-        for (SubscriberInterface subscriber : subscribersList) {
+        for (ISubscriber subscriber : subscribersList) {
             subscriber.setData(this.temperature, this.humidity, this.pressure);
             subscriber.update();
         }

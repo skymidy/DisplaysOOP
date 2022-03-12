@@ -1,6 +1,6 @@
 package com.company;
 
-public class ConsoleDisplay implements SubscriberInterface { // Реализуем интерфейс SubscriberInterface
+public class ConsoleDisplay implements ISubscriber { // Реализуем интерфейс ISubscriber
 
     private float temperature;
     private float humidity;
@@ -20,7 +20,7 @@ public class ConsoleDisplay implements SubscriberInterface { // Реализуе
         System.out.printf("temperature: %.3f humidity: %f pressure: %f\n", temperature, humidity, pressure);
     }
 
-    // Реализуем методы интерфейса SubscriberInterface.
+    // Реализуем методы интерфейса ISubscriber.
     // Описание методов есть в файлах интрфейса.
     @Override
     public void setData(float temperature, float humidity, float pressure) {
