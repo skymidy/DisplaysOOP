@@ -5,14 +5,17 @@ import java.util.List;
 
 public class WeatherData implements SubjectInterface { // Реализуем интерфейс SubjectInterface
 
+    // Структура данных список
     private List<SubscriberInterface> subscribersList;
 
     private float temperature;
     private float humidity;
     private float pressure;
 
-    //Конструктор класса
+    // Конструктор класса
     public WeatherData() {
+        // Ключевое слово this используется для обращения
+        // к полям класса, в котором этот метод находится.
         this.subscribersList = new ArrayList<>();
         this.temperature = -10;
         this.humidity = 90;
