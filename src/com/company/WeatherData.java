@@ -3,7 +3,7 @@ package com.company;
 import java.util.ArrayList;
 import java.util.List;
 
-public class WeahterData implements SubjectIntereface {
+public class WeatherData implements SubjectInterface {
 
     private List<SubscriberInterface> subscribersList;
 
@@ -12,7 +12,7 @@ public class WeahterData implements SubjectIntereface {
     private float pressure;
 
 
-    public WeahterData() {
+    public WeatherData() {
         this.subscribersList = new ArrayList<>();
         this.temperature = -10;
         this.humidity = 90;
