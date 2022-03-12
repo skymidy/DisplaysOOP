@@ -3,7 +3,7 @@ package com.company;
 import java.util.ArrayList;
 import java.util.List;
 
-public class WeatherData implements SubjectInterface {
+public class WeatherData implements SubjectInterface { // Реализуем интерфейс SubjectInterface
 
     private List<SubscriberInterface> subscribersList;
 
@@ -11,7 +11,7 @@ public class WeatherData implements SubjectInterface {
     private float humidity;
     private float pressure;
 
-
+    //Конструктор класса
     public WeatherData() {
         this.subscribersList = new ArrayList<>();
         this.temperature = -10;
@@ -19,6 +19,8 @@ public class WeatherData implements SubjectInterface {
         this.pressure = 1;
     }
 
+    // Реализуем методы интерфейса SubjectInterface.
+    // Описание методов есть в файлах интрфейса.
     @Override
     public void subscribe(SubscriberInterface subscriberInterface) {
         subscribersList.add(subscriberInterface);
